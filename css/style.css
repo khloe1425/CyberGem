@@ -4,29 +4,32 @@
   margin: 0;
   box-sizing: border-box;
 }
-:root{
+:root {
   --color-dark-1: #0e0e0e;
   --color-dark-2: #000000;
 
   --color-light-1: #ababab;
   --color-light-2: #12f0b1;
+  --color-light-3: #f7f7f7;
 }
 html,
 body {
   font-family: "Montserrat", sans-serif;
   color: var(--color-dark-2);
 }
-.container{
+.container {
   max-width: 1200px;
   margin: auto;
 }
 
 /* HEADER */
 .header__container {
+  position: fixed;
+  width: 100%;
   padding: 33px 37px;
   display: flex;
   justify-content: space-between;
-  background-color: aqua;
+  z-index: 2;
 }
 .header__logo img {
   width: 164px;
@@ -54,22 +57,53 @@ body {
 }
 
 /* INTRO */
-.intro{
+.intro {
   overflow: hidden;
+  position: relative;
 }
 .intro__content {
   font-weight: 800;
   font-size: 120px;
-  line-height:144px;
-  letter-spacing:0;
-
+  line-height: 144px;
+  letter-spacing: 0;
 }
-.intro__content div>span:first-child{
+.intro__content > div {
+  padding: 90px 0 80px;
+}
+.intro__span {
   color: var(--color-light-2);
+}
+.intro__container {
+  display: inline-flex;
+  min-width: 500px;
+}
+.intro__span1,
+.intro__span2,
+.intro__span3,
+.intro__span4 {
+  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+  animation: textRunning 8s ease-in-out infinite;
+  display: inline-block;
+  overflow: hidden;
+  opacity: 0;
+  width: 0;
+}
+.intro__span1 {
+  animation-delay: 0s;
+}
+.intro__span2 {
+  animation-delay: 2s;
+}
+.intro__span3 {
+  animation-delay: 4s;
+}
+.intro__span4 {
+  animation-delay: 6s;
 }
 .intro__cover {
   display: grid;
   grid-template-columns: 5fr 7fr;
+  padding-bottom: 110px;
 }
 .intro__cover__left {
   height: 100%;
@@ -88,17 +122,69 @@ body {
   line-height: 37px;
   color: var(--color-dark-2);
 }
+.intro__layout {
+  color: var(--color-light-3);
+  font-size: 500px;
+  font-weight: 700;
 
+  position: absolute;
+  bottom: -40%;
+  left: 40px;
+  z-index: -1;
+  letter-spacing: 25px;
+}
+
+/* CAROUSEL */
+.swiper {
+  width: 100%;
+  height: 740px;
+}
+/* .swiper img{
+  height: 100%;
+  object-fit: cover;
+} */
+.carousel__slide__1,
+.carousel__slide__2,
+.carousel__slide__3 {
+  background-image: url(../img/1-2-thegem-featured-post-slide-fullwidth.jpg);
+  background-size: cover;
+  background-position: center center;
+}
+.carousel__slide__2{
+  background-image: url(../img/2-10-thegem-featured-post-slide-fullwidth.jpg);
+}
+.carousel__slide__3{
+  background-image: url(../img/3-3-thegem-featured-post-slide-fullwidth.jpg);
+}
+.carousel__wrapper{
+  height: 740px;
+  position: relative;
+}
+.carousel__content{
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
 
 /* KEYFRAMES */
-/* @keyframes imgRotate {
+@keyframes textRunning {
   0% {
-    transform: rotate(-1deg) translate(2px, 2px);
+    display: inline-block;
+    opacity: 0;
+    width: 0;
   }
-  50% {
-    transform: rotate(2deg) translate(-2px, -2px);
+  5% {
+    opacity: 1;
+    width: 500px;
   }
-  100% {
-    transform: rotate(-1deg) translate(2px, 2px);
+  20% {
+    opacity: 1;
+    width: 500px;
   }
-} */
+  25% {
+    display: none;
+    opacity: 0;
+    width: 0;
+  }
+}

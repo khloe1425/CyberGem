@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous"
         referrerpolicy="no-referrer" />
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
     <!-- Main CSS -->
     <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -25,7 +27,8 @@
     <header>
         <div class="header__container">
             <div class="header__logo">
-                <a href="https://codex-themes.com/thegem/sites/digital-marketing/" ><img src="./img/logo_0e3e9be98c6f212908c72ebbc2387fa1_1x.png" alt="TheGem Logo"></a>
+                <a href="https://codex-themes.com/thegem/sites/digital-marketing/"><img
+                        src="./img/logo_0e3e9be98c6f212908c72ebbc2387fa1_1x.png" alt="TheGem Logo"></a>
             </div>
             <div class="header__button">
                 <button>
@@ -41,15 +44,15 @@
     <section class="intro">
         <div class="intro__content container">
             <div>
-                <span>Digital </span>
+                <span class="intro__span">Digital </span>
                 <span>Marketing.</span>
                 <span>Creative </span>
-                <span>
-                    <span>Design.</span>
-                    <span>Vision.</span>
-                    <span>Ideas.</span>
-                    <span>Coding.</span>
-                </span>
+                <div class="intro__container">
+                    <span class="intro__span1">Design.</span>
+                    <span class="intro__span2">Vision.</span>
+                    <span class="intro__span3">Ideas.</span>
+                    <span class="intro__span4">Coding.</span>
+                </div>
             </div>
         </div>
         <div class="intro__cover">
@@ -58,10 +61,59 @@
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates molestias perspiciatis ad laudantium esla.</p>
             </div>
         </div>
+        <div class="intro__layout">
+            <p>digital</p>
+        </div>
     </section>
 
     <!-- Carousel -->
-    <section class="home__carousel"></section>
+    <section class="carousel__home">
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide carousel__slide__1">
+                    <div class="carousel__wrapper container">
+                        <div class="carousel__content">
+                            <p>
+                                <a href="#">Design</a>
+                                <span> ,</span>
+                                <a href="#">Interface</a>
+                            </p>
+                            <p>We are nominated to agency of year for the second time</p>
+                            <button>READ MORE</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide carousel__slide__2">
+                    <div class="carousel__wrapper container">
+                        <div class="carousel__content">
+                            <p>
+                                <a href="#">Design</a>
+                                <span> ,</span>
+                                <a href="#">Interface</a>
+                            </p>
+                            <p>Dolore magnam aliquam quaerat voluptatem nemo enim</p>
+                            <button>READ MORE</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide carousel__slide__3">
+                    <div class="carousel__wrapper container">
+                        <div class="carousel__content">
+                            <p>
+                                <a href="#">Design</a>
+                                <span> ,</span>
+                                <a href="#">Interface</a>
+                            </p>
+                            <p>Consequuntur magni sit dolores eos qui ratione duis voluptatem!</p>
+                            <button>READ MORE</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </section>
 
     <!-- Product -->
     <section class="product"></section>
@@ -88,7 +140,7 @@
     <section class="blog"></section>
 
     <!-- Video -->
-    <section class="home__video"></section>
+    <section class="video"></section>
 
     <!-- Clients -->
     <section class="clients"></section>
@@ -98,6 +150,22 @@
 
     <!-- Footer -->
     <footer></footer>
+
+    <!-- Swiper -->
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            direction: 'horizontal',
+            loop: true,
+            allowTouchMove: false,
+            speed: 800,
+
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
 </body>
 
 </html>
