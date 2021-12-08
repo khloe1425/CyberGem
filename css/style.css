@@ -11,6 +11,8 @@
   --color-light-1: #ababab;
   --color-light-2: #12f0b1;
   --color-light-3: #f7f7f7;
+  --color-light-4: #ffffff;
+  --color-light-5: #00f7b5;
 }
 html,
 body {
@@ -150,21 +152,80 @@ body {
   background-size: cover;
   background-position: center center;
 }
-.carousel__slide__2{
+.carousel__slide__2 {
   background-image: url(../img/2-10-thegem-featured-post-slide-fullwidth.jpg);
 }
-.carousel__slide__3{
+.carousel__slide__3 {
   background-image: url(../img/3-3-thegem-featured-post-slide-fullwidth.jpg);
 }
-.carousel__wrapper{
+.carousel__wrapper {
   height: 740px;
   position: relative;
 }
-.carousel__content{
+.carousel__content {
   position: absolute;
   left: 0;
   top: 50%;
   transform: translateY(-50%);
+}
+.carousel__content>span {
+  display: inline-block;
+  background-color: var(--color-dark-2);
+  color: var(--color-light-4);
+  line-height: 24px;
+  padding: 0 10px;
+}
+.carousel__content a {
+  color: var(--color-light-4);
+  text-decoration: none;
+
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+.carousel__content a:hover{
+  text-decoration: underline;
+}
+.carousel__content h3{
+  padding: 70px 0;
+  color: var(--color-light-5);
+  line-height: 69px;
+  font-size: 50px;
+  font-weight: 700;
+}
+.carousel__content button{
+  height: 40px;
+  padding: 0 17px;
+  background-color: transparent;
+  border: 2px solid var(--color-light-4);
+
+  color: var(--color-light-4);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+
+  transition: all .3s;
+}
+.carousel__content button:hover{
+  cursor: pointer;
+  background-color: var(--color-light-4);
+  color: rgb(14,14, 14);
+}
+.swiper-button-prev:after, .swiper-button-next:after{
+  content: "<";
+  font-size: 50px;
+  font-family: 'Poppins', sans-serif;
+  color: var(--color-light-4);
+  margin-left: 80px;
+  transition: all 0.3s;
+}
+.swiper-button-next:after{
+  content: ">";
+  margin-left: 0;
+  margin-right: 80px;
+}
+.swiper-button-prev:hover:after, .swiper-button-next:hover:after{
+  color: var(--color-dark-2);
 }
 
 /* KEYFRAMES */
