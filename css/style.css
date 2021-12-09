@@ -7,6 +7,8 @@
 :root {
   --color-dark-1: #0e0e0e;
   --color-dark-2: #000000;
+  --color-dark-3: #383838;
+  --color-dark-4: #777777;
 
   --color-light-1: #ababab;
   --color-light-2: #12f0b1;
@@ -30,6 +32,15 @@ body {
 .wrapper {
   padding: 0 21px;
 }
+.wrapper__all{
+  padding: 21px;
+}
+.col-2{
+  width: 16.667%;
+}
+.col-3{
+  width: 25%;
+}
 .col-4 {
   width: 33.333%;
 }
@@ -38,6 +49,9 @@ body {
 }
 .d-flex {
   display: flex;
+}
+.center{
+  text-align: center;
 }
 .button__light {
   height: 40px;
@@ -457,6 +471,88 @@ body {
   left: -100px;
   height: 100%;
   z-index: -2;
+}
+
+/* SERVICES */
+.services{
+  background-color: var(--color-dark-2);
+  padding: 125px 0 130px;
+  overflow: hidden;
+}
+.services__title{
+  color: var(--color-light-5);
+  line-height: 25px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: .05em;
+}
+.services__cover{
+  padding: 60px 0 160px;
+}
+.services__cover__left{
+  background-image: url(../img/30.png);
+  background-repeat: no-repeat;
+  background-position: right;
+}
+.services__cover__right{
+  max-width: 600px;
+  margin-left: 50px;
+  color: var(--color-light-4);
+}
+.services__item{
+  border: 1px solid var(--color-dark-3);
+  background-color: transparent;
+  color: var(--color-dark-4);
+  transition: all 0.5s;
+  position: relative;
+  cursor: pointer;
+}
+.services__item:hover{
+  background-color: var(--color-light-4);
+  color: var(--color-dark-2);
+}
+.services__item i{
+  padding:70px 0 25px;
+  line-height: 25px;
+  font-size: 40px;
+  color: var(--color-light-1);
+}
+.services__item p,.services__item span{
+  font-size: 20px;
+  line-height: 19.2px;
+  font-weight: 700;
+}
+.services__item span{
+  display: block;
+  text-transform: uppercase;
+  margin: 14px 0 60px;
+  line-height: 25px;
+  font-size: 14px;
+}
+.services__column:nth-child(2),.services__column:nth-child(4){
+  transform: translateY(-60px);
+}
+
+/* COUNTER */
+.counter .container{
+  display: flex;
+  justify-content: space-around;
+  padding: 175px 0 135px;
+  position: relative;
+}
+.counter__item p:first-child{
+  line-height: 100px;
+  font-size: 100px;
+  font-weight: 700;
+  padding-bottom: 10px;
+  letter-spacing: 10px;
+}
+.counter__layout{
+  position: absolute;
+  top: 130px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
 }
 
 /* KEYFRAMES */
