@@ -16,6 +16,7 @@
   --color-light-6: #18f7b8;
   --color-light-7: #c4c4c4;
   --color-light-8: #12f0b1cc;
+  --color-light-9: #10e0a5;
 }
 html,
 body {
@@ -29,11 +30,70 @@ body {
 .wrapper {
   padding: 0 21px;
 }
-.col6 {
+.col-4 {
+  width: 33.333%;
+}
+.col-6 {
   width: 50%;
 }
 .d-flex {
   display: flex;
+}
+.button__light {
+  height: 40px;
+  padding: 0 17px;
+  background-color: transparent;
+  border: 2px solid var(--color-light-4);
+
+  color: var(--color-light-4);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+
+  transition: all 0.3s;
+}
+.button__light:hover {
+  cursor: pointer;
+  background-color: var(--color-light-4);
+  color: rgb(14, 14, 14);
+}
+.button__dark {
+  height: 40px;
+  padding: 0 17px;
+  background-color: transparent;
+  border: 2px solid var(--color-dark-1);
+
+  color: var(--color-dark-1);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+
+  transition: all 0.3s;
+}
+.button__dark:hover {
+  color: var(--color-light-4);
+  background-color: var(--color-dark-1);
+}
+.layout {
+  color: var(--color-light-3);
+  position: absolute;
+  font-size: 500px;
+  font-weight: 700;
+  z-index: -1;
+  letter-spacing: 25px;
+}
+.text__cover{
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 37px;
+}
+.text__medium{
+  line-height: 34px;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-dark-1);
 }
 
 /* HEADER */
@@ -129,23 +189,9 @@ body {
   max-width: 600px;
   margin-left: 30px;
 }
-.intro__cover__right p {
-  font-family: "Source Sans Pro", sans-serif;
-  font-size: 24px;
-  font-weight: 300;
-  line-height: 37px;
-  color: var(--color-dark-2);
-}
 .intro__layout {
-  color: var(--color-light-3);
-  font-size: 500px;
-  font-weight: 700;
-
-  position: absolute;
   bottom: -40%;
   left: 40px;
-  z-index: -1;
-  letter-spacing: 25px;
 }
 
 /* CAROUSEL */
@@ -202,24 +248,6 @@ body {
   font-size: 50px;
   font-weight: 700;
 }
-.carousel__content button {
-  height: 40px;
-  padding: 0 17px;
-  background-color: transparent;
-  border: 2px solid var(--color-light-4);
-
-  color: var(--color-light-4);
-  font-weight: 700;
-  font-size: 14px;
-  letter-spacing: 1px;
-
-  transition: all 0.3s;
-}
-.carousel__content button:hover {
-  cursor: pointer;
-  background-color: var(--color-light-4);
-  color: rgb(14, 14, 14);
-}
 .swiper-button-prev:after,
 .swiper-button-next:after {
   content: "<";
@@ -242,8 +270,9 @@ body {
 /* PRODUCT */
 .product {
   padding-top: 122px;
+  overflow: hidden;
 }
-.product .container{
+.product .container {
   position: relative;
 }
 .product__intro {
@@ -256,29 +285,7 @@ body {
   font-weight: 700;
 }
 .product__intro p {
-  line-height: 37px;
-  font-size: 24px;
-  font-weight: 300;
-  font-family: "Source Sans Pro", sans-serif;
   padding: 50px 0;
-}
-.product__intro button {
-  height: 40px;
-  padding: 0 17px;
-  background-color: transparent;
-  border: 2px solid var(--color-dark-1);
-
-  color: var(--color-dark-1);
-  font-family: "Montserrat", sans-serif;
-  font-weight: 700;
-  font-size: 14px;
-  cursor: pointer;
-
-  transition: all 0.3s;
-}
-.product__intro button:hover{
-  color: var(--color-light-4);
-  background-color: var(--color-dark-1);
 }
 .product__item {
   padding-bottom: 42px;
@@ -297,10 +304,6 @@ body {
 }
 .product__item h4 {
   padding-top: 30px;
-  line-height: 34px;
-  font-size: 24px;
-  font-weight: 700;
-  color: var(--color-dark-1);
 }
 .product__separator {
   margin: 10px 0;
@@ -345,54 +348,115 @@ body {
   opacity: 0;
   transition: all 0.5s;
 }
-.product__overlay a{
+.product__overlay a {
   position: relative;
   opacity: 0;
   color: #fff;
   margin: 16px;
-  transition: all .5s ease-out;
+  transition: all 0.5s ease-out;
 }
-.product__overlay a:first-of-type{
+.product__overlay a:first-of-type {
   top: -250px;
 }
-.product__overlay a:nth-of-type(2){
+.product__overlay a:nth-of-type(2) {
   top: -300px;
 }
-.product__overlay a:nth-of-type(3){
+.product__overlay a:nth-of-type(3) {
   top: -350px;
 }
-.product__overlay a:last-of-type{
+.product__overlay a:last-of-type {
   top: -400px;
 }
 .product__item:hover .product__overlay {
   opacity: 1;
 }
-.product__item:hover .product__overlay a{
+.product__item:hover .product__overlay a {
   opacity: 1;
 }
-.product__item:hover .product__overlay a:first-of-type{
+.product__item:hover .product__overlay a:first-of-type {
   transform: translateY(250px);
 }
-.product__item:hover .product__overlay a:nth-of-type(2){
+.product__item:hover .product__overlay a:nth-of-type(2) {
   transform: translateY(300px);
 }
-.product__item:hover .product__overlay a:nth-of-type(3){
+.product__item:hover .product__overlay a:nth-of-type(3) {
   transform: translateY(350px);
 }
-.product__item:hover .product__overlay a:last-of-type{
+.product__item:hover .product__overlay a:last-of-type {
   transform: translateY(400px);
 }
-.product__layout{
-  position: absolute;
+.product__layout {
   bottom: -7%;
   left: -11%;
+}
+.product__cover {
+  padding: 100px 0 250px;
+  clear: both;
+}
+.product__cover__right {
+  float: right;
+}
+.product__cover__left {
+  float: right;
+  padding: 0 80px 0 90px;
+  position: relative;
 
-  color: var(--color-light-3);
+  line-height: 37px;
+  transform: translateY(-10px);
+}
+.product__cover__left span {
+  position: absolute;
+  top: 160px;
+  left: 40px;
+
+  color: var(--color-light-2);
   font-size: 500px;
   font-weight: 700;
+  font-family: "Montserrat", sans-serif;
 
   z-index: -1;
-  letter-spacing: 25px;
+}
+
+/* MARKETING */
+.marketing {
+  overflow: hidden;
+  position: relative;
+}
+.marketing__content {
+  padding: 150px 0;
+}
+.marketing__content p {
+  color: var(--color-dark-1);
+  line-height: 25px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.1em;
+}
+.marketing__content h3 {
+  line-height: 90px;
+  font-size: 80px;
+  letter-spacing: 0.05em;
+  margin-bottom: 90px;
+}
+.marketing__content button {
+  height: 50px;
+  line-height: 46px;
+  padding: 0 25px;
+  font-size: 19px;
+}
+.marketing__layout {
+  bottom: -29%;
+  left: -16%;
+  color: var(--color-light-9);
+  z-index: -1;
+}
+.marketing__bg{
+  position: absolute;
+  top: 0%;
+  left: -100px;
+  height: 100%;
+  z-index: -2;
 }
 
 /* KEYFRAMES */
