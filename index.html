@@ -18,6 +18,8 @@
         referrerpolicy="no-referrer" />
     <!-- Swiper -->
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <!-- Odometer -->
+    <link rel="stylesheet" href="./css/odometer-theme-default.css">
     <!-- Main CSS -->
     <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -296,17 +298,21 @@
 
     <!-- Counter -->
     <section class="counter">
-        <div class="container">
+        <div class="container" id="counter__container">
+            <!-- Chạy bằng thư viện Odometer chưa chỉnh được chức năng bắt đầu chạy khi người dùng cuộn màn hình đến -->
             <div class="counter__item center">
-                <p class="numscroller" data-min="0" data-max="322" data-delay="1.5" data-increment="1">322</p>
+                <!-- <p class="numscroller" data-min="0" data-max="322" data-delay="1.5" data-increment="1">322</p> -->
+                <p class="odometer1"></p>
                 <p class="text__cover">Сompleted projects</p>
             </div>
             <div class="counter__item center">
-                <p class="numscroller" data-min="0" data-max="487" data-delay="1.5" data-increment="1">487</p>
+                <!-- <p class="numscroller" data-min="0" data-max="487" data-delay="1.5" data-increment="1">487</p> -->
+                <p class="odometer2"></p>
                 <p class="text__cover">Сlients overall</p>
             </div>
             <div class="counter__item center">
-                <p class="numscroller" data-min="0" data-max="210" data-delay="1.5" data-increment="1">210</p>
+                <!-- <p class="numscroller" data-min="0" data-max="210" data-delay="1.5" data-increment="1">210</p> -->
+                <p class="odometer3"></p>
                 <p class="text__cover">Frequent clients</p>
             </div>
             <img class="counter__layout" src="./img/29.png" alt="IMG">
@@ -342,6 +348,28 @@
         crossorigin="anonymous"></script>
     <!-- Num Scroller -->
     <script src="./js/numscroller-1.0.js"></script>
+    <!-- Odometer -->
+    <script src="./js/odometer.min.js"></script>
+    <script>
+        var Odometer1 = document.querySelector(".odometer1");
+        var odometer = new Odometer({
+            el: Odometer1,
+            duration:1500,
+        });
+        Odometer1.innerHTML = "322";
+        var Odometer2 = document.querySelector(".odometer2");
+        var odometer2 = new Odometer({
+            el: Odometer2,
+            duration:1500,
+        });
+        Odometer2.innerHTML = "487";
+        var Odometer3 = document.querySelector(".odometer3");
+        var odometer3 = new Odometer({
+            el: Odometer3,
+            duration:1500,
+        });
+        Odometer3.innerHTML = "210";
+    </script>
     <!-- Swiper -->
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script>
