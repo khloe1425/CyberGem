@@ -10,7 +10,7 @@
   --color-dark-3: #383838;
   --color-dark-4: #777777;
   --color-dark-5: #474747;
-
+  
   --color-light-1: #ababab;
   --color-light-2: #12f0b1;
   --color-light-3: #f7f7f7;
@@ -21,6 +21,7 @@
   --color-light-8: #12f0b1cc;
   --color-light-9: #10e0a5;
   --color-light-10: #979797;
+  --color-light-11: #00e7a9;
 }
 html,
 body {
@@ -674,49 +675,66 @@ body {
   background-color: var(--color-light-5);
 }
 /* WORKING - Carousel */
-.slideshow-container {
+.working__grid__item:nth-of-type(3) {
+  background-color: var(--color-light-5);
   position: relative;
 }
-
-/* Hide the images by default */
-.mySlides {
-  display: none;
+.working__wrapper {
+  padding: 0 85px;
 }
+.working__slide__content .text__medium {
+  padding-bottom: 20px;
+  color: var(--color-dark-2);
+  line-height: 25px;
+}
+.working__slide__content .text__mini {
+  color: var(--color-dark-2);
+  font-family: "Source Sans Pro", sans-serif;
+  padding-bottom: 40px;
+}
+.working__slide__content .text__cover {
+  font-size: 26px;
+}
+.working__slide__content span {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
 
-/* Next & previous buttons */
-.prev, .next {
+  color: var(--color-light-11);
+  font-size: 130px;
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+  z-index: 0;
+}
+.slick-prev,
+.slick-next {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
   cursor: pointer;
+  background-color: var(--color-dark-2);
+
   position: absolute;
   top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
+  transform: translateY(-50%);
 
-/* Position the "next button" to the right */
-.next {
+  color: var(--color-light-4);
+  font-size: 16px;
+  line-height: 40px;
+  text-align: center;
+  border: none;
+
+  transition: 0.2s linear;
+}
+.slick-next {
   right: 0;
-  border-radius: 3px 0 0 3px;
 }
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+.slick-prev:hover,
+.slick-next:hover {
+  background-color: var(--color-light-4);
+  color: var(--color-dark-2);
 }
-
-/* Fading animation */
-.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-
 
 /* KEYFRAMES */
 @keyframes textRunning {
@@ -738,8 +756,4 @@ body {
     opacity: 0;
     width: 0;
   }
-}
-@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
 }

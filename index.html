@@ -454,18 +454,29 @@
         </div>
       </div>
       <div class="working__grid__item">
-        <div class="slideshow-container">
-          <div class="mySlides fade center">
-            <p class="text__medium">Jeniffer Burns</p>
-            <p class="text__mini">Creative Heads Inc.</p>
-            <p class="text__cover">The blinding splendor of the diamond. The mighty power of the rocket. Design perfection. The status
-              symbol for any business. Lorem ipsum dolor sit amet, consectetur adipisicing elit!</p>
+        <div class="working__grid__carousel">
+          <div class="working__slide">
+            <div class="working__wrapper">
+              <div class="working__slide__content center">
+                <p class="text__medium">Jeniffer Burns</p>
+                <p class="text__mini">Creative Heads Inc.</p>
+                <p class="text__cover">The blinding splendor of the diamond. The mighty power of the rocket. Design perfection. The status
+                  symbol for any business. Lorem ipsum dolor sit amet, consectetur adipisicing elit!</p>
+                <span>”</span>
+              </div>
+            </div>
           </div>
-
-
-          <!-- Next and previous buttons -->
-          <a class="prev" onclick="plusSlides(-1)"><i class="fa fa-chevron-left"></i></a>
-          <a class="next" onclick="plusSlides(1)"><i class="fa fa-chevron-right"></i></a>
+          <div class="working__slide">
+            <div class="working__wrapper">
+              <div class="working__slide__content center">
+                <p class="text__medium">Gordon Edwards</p>
+                <p class="text__mini">Creative Heads Inc.</p>
+                <p class="text__cover">The blinding splendor of the diamond. The mighty power of the rocket. Design perfection. The status
+                  symbol for any business. Lorem ipsum dolor sit amet, consectetur adipisicing elit!</p>
+                <span>”</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="working__grid__item">
@@ -536,6 +547,22 @@
   </script>
   <!-- Slick Carousel -->
   <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.working__grid__carousel').slick({
+        // autoplay: true,
+        autoplaySpeed: 8000,
+        speed: 1200,
+
+        arrows: true,
+        prevArrow: '<a class="slick-prev"><i class="fa fa-chevron-left"></i></a>',
+        nextArrow: '<a class="slick-next"><i class="fa fa-chevron-right"></i></a>',
+
+        draggable: false,
+        zIndex: 1,
+      });
+    });
+  </script>
   <!-- Main JS -->
   <script src="./js/main.js"></script>
 </body>
