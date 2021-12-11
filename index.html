@@ -75,7 +75,7 @@
 
   <!-- Carousel -->
   <section class="carousel__home">
-    <div class="swiper">
+    <div class="swiper carousel__swiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide carousel__slide__1">
           <div class="carousel__wrapper container">
@@ -326,7 +326,7 @@
   <section class="experience">
     <div class="experience__title container">
       <div class="wrapper">
-        <h2 class="text__tittle">What makes us different from others</h2>
+        <h2 class="text__title">What makes us different from others</h2>
         <p class="text__cover">Lorem ipsum dolor sit ametcon sectetur adipisicing elit, sed doiusmod tempor incidi labore et dolore.
           agna aliqua. Ut enim ad mini veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
         </p>
@@ -483,13 +483,78 @@
         <img src="./img/9-2.jpg" alt="Grid IMG">
       </div>
     </div>
+    <div class="working__grid__bottom">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
   </section>
 
   <!-- News -->
-  <section class="news"></section>
+  <section class="news" id="news">
+    <div class="news__content container">
+      <div class="wrapper">
+        <p class="text__title">Latest news from the blog</p>
+        <div class="news__carousel swiper">
+          <div class="swiper-wrapper">
+            <div class="news__slide swiper-slide slide1">
+              <div class="news__slide__content">
+                <a href="#">Lifestyle</a>
+                <h3>Consequuntur magni sit dolores eos qui ratione duis voluptatem!</h3>
+                <button class="button__light">READ MORE</button>
+              </div>
+            </div>
+            <div class="news__slide swiper-slide slide2">
+              <div class="news__slide__content">
+                <a href="#">Lifestyle</a>
+                <h3>Dolore magnam aliquam quaerat voluptatem nemo enim</h3>
+                <button class="button__light">READ MORE</button>
+              </div>
+            </div>
+            <div class="news__slide swiper-slide slide3">
+              <div class="news__slide__content">
+                <a href="#">Lifestyle</a>
+                <h3>We are nominated to agency of year for the second time</h3>
+                <button class="button__light">READ MORE</button>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination news__pagination"></div>
+        </div>
+      </div>
+    </div>
+    <div class="news__blog container d-flex">
+      <div class="news__blog__item wrapper">
+        <p>November 4, 2020</p>
+        <p class="text__medium">How collaborative teams create meaningful things in this time</p>
+        <span class="text__mini">We provide a free day to experience our benefits of digital world!</span>
+        <div class="news__blog__link d-flex">
+          <div><a href="#"><i class="fa fa-heart"></i>&ensp;5</a></div>
+          <div><a href="#"><i class="fa fa-share-alt"></i></a></div>
+        </div>
+      </div>
+      <div class="news__blog__item wrapper">
+        <p>November 4, 2020</p>
+        <p class="text__medium">Can your business become better with new technology?</p>
+        <span class="text__mini">We provide a free day to experience our benefits of digital world!</span>
+        <div class="news__blog__link d-flex">
+          <div><a href="#"><i class="fa fa-heart"></i>&ensp;9</a></div>
+          <div><a href="#"><i class="fa fa-share-alt"></i></a></div>
+        </div>
+      </div>
+      <div class="news__blog__item wrapper">
+        <p>November 4, 2020</p>
+        <p class="text__medium">We are nominated to agency of year for the second time</p>
+        <span class="text__mini">We provide a free day to experience our benefits of digital world!</span>
+        <div class="news__blog__link d-flex">
+          <div><a href="#"><i class="fa fa-heart"></i>&ensp;5</a></div>
+          <div><a href="#"><i class="fa fa-share-alt"></i></a></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- Blog -->
-  <section class="blog"></section>
 
   <!-- Video -->
   <section class="video"></section>
@@ -533,7 +598,7 @@
   <!-- Swiper -->
   <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
   <script>
-    const swiper = new Swiper('.swiper', {
+    const swiper = new Swiper('.carousel__swiper', {
       direction: 'horizontal',
       loop: true,
       allowTouchMove: false,
@@ -544,13 +609,25 @@
         prevEl: '.swiper-button-prev',
       },
     });
+
+    const newSwiper = new Swiper('.news__carousel', {
+      direction: 'horizontal',
+      loop: true,
+      allowTouchMove: false,
+      speed: 800,
+
+      pagination: {
+        el: '.news__pagination',
+        clickable: true,
+      },
+    });
   </script>
   <!-- Slick Carousel -->
   <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   <script>
     $(document).ready(function () {
       $('.working__grid__carousel').slick({
-        // autoplay: true,
+        autoplay: true,
         autoplaySpeed: 8000,
         speed: 1200,
 
