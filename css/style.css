@@ -631,15 +631,15 @@ body {
 .working__grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 50vw);
 }
 .working__grid__item {
   overflow: hidden;
 }
 .working__grid__item img {
-  display: block;
-  width: 140%;
-  transform: translateX(-15%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .working__progress {
   background-color: var(--color-dark-2);
