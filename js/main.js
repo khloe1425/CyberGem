@@ -19,5 +19,3 @@ function move(maxPercent,barID,spanID) {
 move(73,"progressBar1","span1");
 move(48,"progressBar2","span2");
 move(65,"progressBar3","span3");
-
-// Working - Carousel
