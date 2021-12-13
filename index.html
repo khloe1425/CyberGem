@@ -29,10 +29,10 @@
 <body>
   <!-- Header -->
   <header>
-    <div class="header__container">
+    <div class="header__container" id="header">
       <div class="header__logo">
         <a href="https://codex-themes.com/thegem/sites/digital-marketing/"><img src="./img/logo_0e3e9be98c6f212908c72ebbc2387fa1_1x.png"
-            alt="TheGem Logo"></a>
+            alt="TheGem Logo" id="header__img"></a>
       </div>
       <div class="header__button">
         <button>
@@ -41,6 +41,7 @@
           <span class="header__span3"></span>
         </button>
       </div>
+      <div class="header__bg"></div>
     </div>
   </header>
 
@@ -64,8 +65,53 @@
     <div class="intro__cover">
       <div class="intro__cover__left"></div>
       <div class="intro__cover__right">
-        <p class="text__cover">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates molestias perspiciatis ad
-          laudantium esla.</p>
+        <p class="text__cover">
+          <span class="text__animation">
+            <span class="text__inner">Lorem </span>
+          </span>
+          <span class="text__animation">
+            <span class="text__inner">ipsum </span>
+          </span>
+          <span class="text__animation">
+            <span class="text__inner">dolor </span>
+          </span>
+          <span class="text__animation">
+            <span class="text__inner">sit </span>
+          </span>
+          <span class="text__animation">
+            <span class="text__inner">ametcon </span>
+          </span>
+          <span class="text__animation">
+            <span class="text__inner">sectetur </span>
+          </span>
+          <span class="text__animation">
+            <span class="text__inner">adipisicing </span>
+          </span>
+          <span class="text__animation">
+            <span class="text__inner">elit, </span>
+          </span>
+          <span class="text__animation">
+            <span class="text__inner">sed </span>
+          </span> <br>
+          <span class="text__animation">
+            <span class="text__inner delay">doiusmod </span>
+          </span>
+          <span class="text__animation">
+            <span class="text__inner delay">tempor </span>
+          </span>
+          <span class="text__animation">
+            <span class="text__inner delay">incidi </span>
+          </span>
+          <span class="text__animation">
+            <span class="text__inner delay">labore </span>
+          </span>
+          <span class="text__animation">
+            <span class="text__inner delay">et </span>
+          </span>
+          <span class="text__animation">
+            <span class="text__inner delay">dolore.</span>
+          </span>
+        </p>
       </div>
     </div>
     <div class="intro__layout layout">
@@ -302,7 +348,6 @@
   <!-- Counter -->
   <section class="counter">
     <div class="container" id="counter__container">
-      <!-- Chạy bằng thư viện Odometer chưa chỉnh được chức năng bắt đầu chạy khi người dùng cuộn màn hình đến -->
       <div class="counter__item center">
         <!-- <p class="numscroller" data-min="0" data-max="322" data-delay="1.5" data-increment="1">322</p> -->
         <p class="odometer1"></p>
@@ -424,60 +469,68 @@
           <p class="text__cover">Lorem Ipsum proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum
             auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit
             amet mauris. Morbi accumsan ipsum velit.</p>
-          <div>
-            <div class="working__proress__title d-flex">
-              <p class="text__mini">Programming</p>
-              <p class="working__percent" id="span1"></p>
+          <div id="progress__bar">
+            <div>
+              <div class="working__proress__title d-flex">
+                <p class="text__mini">Programming</p>
+                <p class="working__percent" id="span1"></p>
+              </div>
+              <div class="working__progress__bar">
+                <div id="progressBar1" class="working__bar"></div>
+              </div>
             </div>
-            <div class="working__progress__bar">
-              <div id="progressBar1" class="working__bar"></div>
+            <div>
+              <div class="working__proress__title d-flex">
+                <p class="text__mini">Marketing</p>
+                <p class="working__percent" id="span2"></p>
+              </div>
+              <div class="working__progress__bar">
+                <div id="progressBar2" class="working__bar"></div>
+              </div>
             </div>
-          </div>
-          <div>
-            <div class="working__proress__title d-flex">
-              <p class="text__mini">Marketing</p>
-              <p class="working__percent" id="span2"></p>
-            </div>
-            <div class="working__progress__bar">
-              <div id="progressBar2" class="working__bar"></div>
-            </div>
-          </div>
-          <div>
-            <div class="working__proress__title d-flex">
-              <p class="text__mini">Design</p>
-              <p class="working__percent" id="span3"></p>
-            </div>
-            <div class="working__progress__bar">
-              <div id="progressBar3" class="working__bar"></div>
+            <div>
+              <div class="working__proress__title d-flex">
+                <p class="text__mini">Design</p>
+                <p class="working__percent" id="span3"></p>
+              </div>
+              <div class="working__progress__bar">
+                <div id="progressBar3" class="working__bar"></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="working__grid__item">
-        <div class="working__grid__carousel">
-          <div class="working__slide">
+      <div class="working__grid__item swiper working__swiper" id="working__swiper">
+        <div class="working__grid__carousel swiper-wrapper">
+          <div class="working__slide swiper-slide">
             <div class="working__wrapper">
-              <div class="working__slide__content center">
-                <p class="text__medium">Jeniffer Burns</p>
-                <p class="text__mini">Creative Heads Inc.</p>
-                <p class="text__cover">The blinding splendor of the diamond. The mighty power of the rocket. Design perfection. The status
-                  symbol for any business. Lorem ipsum dolor sit amet, consectetur adipisicing elit!</p>
-                <span>”</span>
+              <div class="working__absolute">
+                <div class="working__slide__content center">
+                  <p class="text__medium">Jeniffer Burns</p>
+                  <p class="text__mini">Creative Heads Inc.</p>
+                  <p class="text__cover">The blinding splendor of the diamond. The mighty power of the rocket. Design perfection. The status
+                    symbol for any business. Lorem ipsum dolor sit amet, consectetur adipisicing elit!</p>
+                  <span>”</span>
+                </div>
               </div>
             </div>
           </div>
-          <div class="working__slide">
+          <div class="working__slide swiper-slide">
             <div class="working__wrapper">
-              <div class="working__slide__content center">
-                <p class="text__medium">Gordon Edwards</p>
-                <p class="text__mini">Creative Heads Inc.</p>
-                <p class="text__cover">The blinding splendor of the diamond. The mighty power of the rocket. Design perfection. The status
-                  symbol for any business. Lorem ipsum dolor sit amet, consectetur adipisicing elit!</p>
-                <span>”</span>
+              <div class="working__absolute">
+                <div class="working__slide__content center">
+                  <p class="text__medium">Gordon Edwards</p>
+                  <p class="text__mini">Creative Heads Inc.</p>
+                  <p class="text__cover">The blinding splendor of the diamond. The mighty power of the rocket. Design perfection. The status
+                    symbol for any business. Lorem ipsum dolor sit amet, consectetur adipisicing elit!</p>
+                  <span>”</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
+        <div class="swiper-button-prev working__prev"></div>
+        <div class="swiper-button-next working__next"></div>
       </div>
       <div class="working__grid__item">
         <img src="./img/9-2.jpg" alt="Grid IMG">
@@ -683,7 +736,6 @@
       loop: true,
       allowTouchMove: false,
       speed: 800,
-
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
@@ -695,29 +747,24 @@
       loop: true,
       allowTouchMove: false,
       speed: 800,
-
       pagination: {
         el: '.news__pagination',
         clickable: true,
       },
     });
-  </script>
-  <!-- Slick Carousel -->
-  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-  <script>
-    $(document).ready(function () {
-      $('.working__grid__carousel').slick({
-        autoplay: true,
-        autoplaySpeed: 8000,
-        speed: 1200,
 
-        arrows: true,
-        prevArrow: '<a class="slick-prev"><i class="fa fa-chevron-left"></i></a>',
-        nextArrow: '<a class="slick-next"><i class="fa fa-chevron-right"></i></a>',
-
-        draggable: false,
-        zIndex: 1,
-      });
+    const workingSwiper = new Swiper('.working__swiper', {
+      direction: 'horizontal',
+      loop: true,
+      allowTouchMove: false,
+      speed: 1200,
+      autoplay: {
+        delay: 6000,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
     });
   </script>
   <!-- Back to top -->

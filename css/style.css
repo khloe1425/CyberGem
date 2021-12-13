@@ -28,7 +28,6 @@
   --color-light-13: #efefef;
   --color-light-14: #99a9b5;
 }
-html,
 body {
   font-family: "Montserrat", sans-serif;
   color: var(--color-dark-2);
@@ -144,10 +143,23 @@ body {
 .header__container {
   position: fixed;
   width: 100%;
-  padding: 33px 37px;
+  height: 100px;
+  padding: 0 37px;
   display: flex;
   justify-content: space-between;
-  z-index: 2;
+  align-items: center;
+  z-index: 3;
+  transition: all 0.3s;
+}
+.header__bg{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--color-light-4);
+  z-index: -1;
+  opacity: 1;
 }
 .header__logo img {
   width: 164px;
@@ -155,6 +167,7 @@ body {
 .header__button button {
   position: relative;
   border: none;
+  top: -5px;
 }
 .header__span1,
 .header__span2,
@@ -222,6 +235,19 @@ body {
   display: grid;
   grid-template-columns: 5fr 7fr;
   padding-bottom: 110px;
+}
+.text__animation{
+  display: inline-block;
+  overflow: hidden;
+}
+.text__inner{
+  display: inline-block;
+  opacity: 0;
+  /* animation: name | duration | timing-function | delay | iteration-count | direction | fill-mode */
+  animation: textAnimation 1.2s cubic-bezier(.25,1,.5,1) 60ms forwards;
+}
+.delay{
+  animation-delay: 0.6s;
 }
 .intro__cover__left {
   height: 100%;
@@ -680,9 +706,22 @@ body {
   background-color: var(--color-light-5);
 }
 /* WORKING - Carousel */
-.working__grid__item:nth-of-type(3) {
+#working__swiper {
   background-color: var(--color-light-5);
   overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+.working__slide {
+  height: 100%;
+  position: relative;
+}
+.working__absolute {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .working__wrapper {
   padding: 0 85px;
@@ -698,7 +737,8 @@ body {
   padding-bottom: 40px;
 }
 .working__slide__content .text__cover {
-  font-size: 26px;
+  padding: 0 80px;
+
 }
 .working__slide__content span {
   position: absolute;
@@ -712,31 +752,49 @@ body {
   font-family: "Montserrat", sans-serif;
   z-index: 0;
 }
-.slick-prev,
-.slick-next {
+.working__slide{
+  transition: opacity 0.12s ease;
+}
+.working .swiper-slide-active {
+  opacity: 1;
+}
+.working .swiper-slide-prev {
+  opacity: 0.25;
+}
+.working__prev,
+.working__next {
   display: inline-block;
   height: 40px;
   width: 40px;
   cursor: pointer;
   background-color: var(--color-dark-2);
 
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-
   color: var(--color-light-4);
-  font-size: 16px;
+  font-size: 10px;
   line-height: 40px;
   text-align: center;
   border: none;
 
   transition: 0.2s linear;
 }
-.slick-next {
+.working__prev::after, .working__next::after{
+  content: '>';
+  font-size: 25px;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  line-height: 40px;
+}
+.working__prev::after{
+  content: '<';
+}
+.working__prev{
+  left: 0;
+}
+.working__next {
   right: 0;
 }
-.slick-prev:hover,
-.slick-next:hover {
+.working__prev:hover,
+.working__next:hover {
   background-color: var(--color-light-4);
   color: var(--color-dark-2);
 }
@@ -943,7 +1001,7 @@ body {
   overflow: hidden;
   position: relative;
 }
-.subscribe__left{
+.subscribe__left {
   width: 45%;
   padding-right: 50px;
 }
@@ -967,28 +1025,28 @@ body {
   font-family: "Source Sans Pro", sans-serif;
   margin: 18px 0 0 0;
 }
-.subscribe__right{
+.subscribe__right {
   width: 55%;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 13px;
   padding-left: 25px;
 }
-.subscribe__right input{
+.subscribe__right input {
   height: 50px;
   width: 400px;
   border: 1px solid var(--color-light-4);
   background-color: var(--color-light-4);
   padding: 0 25px;
 }
-.subscribe__right input:focus-visible{
+.subscribe__right input:focus-visible {
   outline: none;
 }
-.subscribe__right button{
+.subscribe__right button {
   height: 50px;
   padding: 0 50px;
 }
-.subscribe__bg{
+.subscribe__bg {
   position: absolute;
   top: 0;
   left: 0;
@@ -997,7 +1055,7 @@ body {
   background-color: var(--color-light-2);
   z-index: -2;
 }
-.subscribe__layout{
+.subscribe__layout {
   bottom: -220px;
   left: -46%;
   color: var(--color-light-9);
@@ -1005,22 +1063,22 @@ body {
 }
 
 /* FOOTER */
-footer{
+footer {
   background-color: var(--color-dark-1);
   padding: 145px 0 0 0;
 }
-.footer__title img{
+.footer__title img {
   width: 200px;
 }
-.footer__title p{
+.footer__title p {
   padding: 140px 0 100px;
   color: var(--color-light-5);
   font-size: 90px;
   line-height: 1.2;
   font-weight: 800;
-  letter-spacing: .05em;
+  letter-spacing: 0.05em;
 }
-.footer__contact{
+.footer__contact {
   color: var(--color-light-4);
   line-height: 37px;
   font-size: 24px;
@@ -1028,28 +1086,28 @@ footer{
   font-family: "Source Sans Pro", sans-serif;
   margin-bottom: 80px;
 }
-.footer__contact div:nth-child(2){
+.footer__contact div:nth-child(2) {
   padding-left: 80px;
 }
-.footer__contact div:last-child{
+.footer__contact div:last-child {
   padding-left: 100px;
 }
-.footer__contact a{
+.footer__contact a {
   text-decoration: none;
   color: var(--color-light-2);
   transition: all 0.3s;
 }
-.footer__contact a:hover{
+.footer__contact a:hover {
   color: var(--color-light-4);
 }
-.footer__network h3{
+.footer__network h3 {
   color: var(--color-light-6);
   line-height: 25px;
   font-size: 16px;
   font-weight: 700;
   margin-bottom: 1.5em;
 }
-.footer__network p span{
+.footer__network p span {
   line-height: 25px;
   font-size: 16px;
   font-weight: 400;
@@ -1059,13 +1117,13 @@ footer{
   cursor: pointer;
   transition: all 0.3s;
 }
-.footer__network p span:hover{
+.footer__network p span:hover {
   color: var(--color-light-5);
 }
-.footer__network p span:hover i{
+.footer__network p span:hover i {
   color: var(--color-light-4);
 }
-.footer__network>span{
+.footer__network > span {
   display: block;
   color: var(--color-dark-7);
   font-size: 16px;
@@ -1073,15 +1131,14 @@ footer{
   font-family: "Source Sans Pro", sans-serif;
   padding: 40px 0;
 }
-.footer__network>span a{
+.footer__network > span a {
   color: var(--color-light-5);
   text-decoration: none;
   transition: all 0.3s;
 }
-.footer__network>span a:hover{
+.footer__network > span a:hover {
   color: var(--color-light-4);
 }
-
 
 /* BACK TO TOP */
 .backToTop {
@@ -1102,7 +1159,7 @@ footer{
   z-index: 2;
   visibility: hidden;
 }
-.cd-top--is-visible { 
+.cd-top--is-visible {
   visibility: visible;
   opacity: 0.5;
 }
@@ -1128,3 +1185,15 @@ footer{
     width: 0;
   }
 }
+
+@keyframes textAnimation{
+  from{
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
