@@ -14,7 +14,7 @@ window.onload = function () {
 }
 
 // Dropdown menu
-function hideAndShowMenu(){
+function hideAndShowMenu() {
   document.querySelector("#menu").classList.toggle("show__menu");
   document.querySelector("#menu").classList.toggle("hide__menu");
   document.querySelector(".header__dropdown").classList.toggle("display__bg");
@@ -22,7 +22,7 @@ function hideAndShowMenu(){
 
 // Product item
 function slideUp(id) {
-    document.getElementById(id).classList.add("showUp");
+  document.getElementById(id).classList.add("showUp");
 }
 
 // Progress bar
@@ -72,3 +72,58 @@ window.onscroll = function () {
     runProgressBar();
   }
 }
+
+// SWIPER
+const swiper = new Swiper('.carousel__swiper', {
+  direction: 'horizontal',
+  loop: true,
+  allowTouchMove: false,
+  speed: 800,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+});
+const newSwiper = new Swiper('.news__carousel', {
+  direction: 'horizontal',
+  loop: true,
+  allowTouchMove: false,
+  speed: 800,
+  pagination: {
+    el: '.news__pagination',
+    clickable: true,
+  },
+});
+const workingSwiper = new Swiper('.working__swiper', {
+  direction: 'horizontal',
+  loop: true,
+  allowTouchMove: false,
+  speed: 1200,
+  autoplay: {
+    delay: 6000,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+});
+
+// ODOMETER
+var Odometer1 = document.querySelector(".odometer1");
+var odometer = new Odometer({
+  el: Odometer1,
+  duration: 1500,
+});
+Odometer1.innerHTML = "322";
+var Odometer2 = document.querySelector(".odometer2");
+var odometer2 = new Odometer({
+  el: Odometer2,
+  duration: 1500,
+});
+Odometer2.innerHTML = "487";
+var Odometer3 = document.querySelector(".odometer3");
+var odometer3 = new Odometer({
+  el: Odometer3,
+  duration: 1500,
+});
+Odometer3.innerHTML = "210";

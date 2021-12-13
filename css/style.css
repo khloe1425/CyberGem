@@ -139,7 +139,7 @@ body {
 .clear {
   clear: both;
 }
-.showUp{
+.showUp {
   animation: showUp 3s both;
 }
 
@@ -155,7 +155,7 @@ body {
   z-index: 4;
   transition: all 0.3s;
 }
-.header__bg{
+.header__bg {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -165,42 +165,42 @@ body {
   z-index: -1;
   opacity: 1;
 }
-.header__dropdown{
+.header__dropdown {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: rgba(255, 255, 255, .95);
+  background-color: rgba(255, 255, 255, 0.95);
   z-index: 3;
   display: none;
 }
-.header__dropdown__content{
+.header__dropdown__content {
   position: fixed;
   top: 50%;
   transform: translateY(-50%);
   left: 0;
   z-index: 3;
   width: 100%;
-  
+
   text-align: center;
   line-height: 64px;
   font-size: 32px;
   font-weight: 700;
 }
-.header__dropdown a{
+.header__dropdown a {
   color: var(--color-dark-1);
   text-decoration: none;
   cursor: pointer;
   transition: all 0.3s;
 }
-.header__dropdown li:first-child a{
+.header__dropdown li:first-child a {
   color: var(--color-light-2);
 }
-.header__dropdown a:hover{
+.header__dropdown a:hover {
   color: var(--color-light-2);
 }
-.header__dropdown__content>a{
+.header__dropdown__content > a {
   display: inline-block;
   margin-top: 40px;
 }
@@ -230,13 +230,13 @@ body {
 .header__span3 {
   top: 6px;
 }
-.show__menu{
+.show__menu {
   animation: dropdownShow 0.5s linear forwards;
 }
-.hide__menu{
+.hide__menu {
   animation: dropdownHide 0.5s linear forwards;
 }
-.display__bg{
+.display__bg {
   display: block;
 }
 
@@ -245,11 +245,11 @@ body {
   overflow: hidden;
   position: relative;
 }
-.intro__fade{
+.intro__fade {
   transform: all 1s;
   animation: textFade 1.5s linear 0.3s both;
 }
-.fade{
+.fade {
   animation-delay: 0.6s;
 }
 .intro__content {
@@ -272,7 +272,6 @@ body {
 .intro__span2,
 .intro__span3,
 .intro__span4 {
-  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
   animation: textRunning 8s ease-in-out infinite;
   display: inline-block;
   overflow: hidden;
@@ -296,17 +295,17 @@ body {
   grid-template-columns: 5fr 7fr;
   padding-bottom: 110px;
 }
-.text__animation{
+.text__animation {
   display: inline-block;
   overflow: hidden;
 }
-.text__inner{
+.text__inner {
   display: inline-block;
   opacity: 0;
   /* animation: name | duration | timing-function | delay | iteration-count | direction | fill-mode */
-  animation: textAnimation 1.2s cubic-bezier(.25,1,.5,1) 60ms forwards;
+  animation: textAnimation 1.2s cubic-bezier(0.25, 1, 0.5, 1) 60ms forwards;
 }
-.delay{
+.delay {
   animation-delay: 0.6s;
 }
 .intro__cover__left {
@@ -798,7 +797,6 @@ body {
 }
 .working__slide__content .text__cover {
   padding: 0 80px;
-
 }
 .working__slide__content span {
   position: absolute;
@@ -812,7 +810,7 @@ body {
   font-family: "Montserrat", sans-serif;
   z-index: 0;
 }
-.working__slide{
+.working__slide {
   transition: opacity 0.12s ease;
 }
 .working .swiper-slide-active {
@@ -837,17 +835,18 @@ body {
 
   transition: 0.2s linear;
 }
-.working__prev::after, .working__next::after{
-  content: '>';
+.working__prev::after,
+.working__next::after {
+  content: ">";
   font-size: 25px;
   font-weight: 400;
   font-family: "Poppins", sans-serif;
   line-height: 40px;
 }
-.working__prev::after{
-  content: '<';
+.working__prev::after {
+  content: "<";
 }
-.working__prev{
+.working__prev {
   left: 0;
 }
 .working__next {
@@ -1225,11 +1224,11 @@ footer {
 }
 
 /* KEYFRAMES */
-@keyframes textFade{
-  from{
+@keyframes textFade {
+  from {
     opacity: 0;
   }
-  to{
+  to {
     opacity: 1;
   }
 }
@@ -1255,68 +1254,48 @@ footer {
   }
 }
 
-@keyframes textAnimation{
-  from{
+@keyframes textAnimation {
+  from {
     opacity: 0;
     transform: translateX(-100px);
   }
-  to{
+  to {
     opacity: 1;
     transform: translateX(0);
   }
 }
 
-@keyframes showUp{
-  from{
+@keyframes showUp {
+  from {
     opacity: 0;
     transform: translateY(200px);
   }
-  to{
+  to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-@keyframes dropdownShow{
-  from{
+@keyframes dropdownShow {
+  from {
     z-index: 5;
     opacity: 0;
     transform: translateY(-100px);
   }
-  to{
+  to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-@keyframes dropdownHide{
-  from{
+@keyframes dropdownHide {
+  from {
     opacity: 1;
     transform: translateY(0);
   }
-  to{
+  to {
     opacity: 0;
     transform: translateY(100px);
     z-index: -5;
-  }
-}
-
-@keyframes bgShow{
-  from{
-    height: 100vh;
-    background-color: rgba(255, 255, 255, 0);
-  }
-  to{
-    height: 100vh;
-    background-color: rgba(255, 255, 255, 0.95);
-  }
-}
-
-@keyframes bgHide{
-  from{
-    height: 0;
-  }
-  to{
-    height: 0;
   }
 }
